@@ -7,7 +7,7 @@ from telegram.ext import (
     filters
 )
 
-TOKEN = "8859778786:AAHsUtK_quRETVDxUAQPawIC5bqM3l0U_q0"
+TOKEN = "8859778786:AAE3nfd-smdf2ib9OORKw_qXTM94e2gASH0"
 
 faq = {
 
@@ -44,13 +44,13 @@ faq = {
     "horário":
     "🕒 Consulte Horários no site",
 
-    "horario":
+    "horarios":
     "🕒 Consulte Horários no site",
 
     "calendário":
     "📆 Abra Calendário Escolar",
 
-    "calendario":
+    "calendarios":
     "📆 Abra Calendário Escolar",
 
     "secretaria":
