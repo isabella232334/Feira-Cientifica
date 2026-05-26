@@ -10,79 +10,36 @@ from telegram.ext import (
 BOT_TOKEN = "8859778786:AAE3nfd-smdf2ib9OORKw_qXTM94e2gASH0"
 
 faq = {
-
-    "prova":
-    "📅 Vá em Calendário → Provas",
-
-    "provas":
-    "📅 Vá em Calendário → Provas",
-
-    "aviso":
-    "📢 Abra Avisos da Gestão",
-
-    "avisos":
-    "📢 Abra Avisos da Gestão",
-
-    "norma":
-    "📜 Consulte Normas",
-
-    "normas":
-    "📜 Consulte Normas",
-
-    "arquivo":
-    "📂 Abra Arquivos",
-
-    "arquivos":
-    "📂 Abra Arquivos",
-
-    "evento":
-    "🎉 Veja Eventos no menu principal",
-
-    "eventos":
-    "🎉 Veja Eventos no menu principal",
-
-    "horário":
-    "🕒 Consulte Horários no site",
-
-    "horarios":
-    "🕒 Consulte Horários no site",
-
-    "calendário":
-    "📆 Abra Calendário Escolar",
-
-    "calendarios":
-    "📆 Abra Calendário Escolar",
-
-    "secretaria":
-    "🏫 Procure a Secretaria",
-
-    "coordenação":
-    "👨‍🏫 Procure Coordenação",
-
-    "coordenacao":
-    "👨‍🏫 Procure Coordenação",
-
-    "senha":
-    "🔑 Clique em 'Esqueci minha senha' na tela de login",
-
-    "login":
-    "🔐 Faça login pela página inicial",
-
-    "petrolino":
-    "🤖 Oi! Sou o Petrolino 💙"
+    "prova": "📅 Vá em Calendário → Provas",
+    "provas": "📅 Vá em Calendário → Provas",
+    "aviso": "📢 Abra Avisos da Gestão",
+    "avisos": "📢 Abra Avisos da Gestão",
+    "norma": "📜 Consulte Normas",
+    "normas": "📜 Consulte Normas",
+    "arquivo": "📂 Abra Arquivos",
+    "arquivos": "📂 Abra Arquivos",
+    "evento": "🎉 Veja Eventos no menu principal",
+    "eventos": "🎉 Veja Eventos no menu principal",
+    "horário": "🕒 Consulte Horários no site",
+    "horarios": "🕒 Consulte Horários no site",
+    "calendário": "📆 Abra Calendário Escolar",
+    "calendarios": "📆 Abra Calendário Escolar",
+    "secretaria": "🏫 Procure a Secretaria",
+    "coordenação": "👨‍🏫 Procure Coordenação",
+    "coordenacao": "👨‍🏫 Procure Coordenação",
+    "senha": "🔑 Clique em 'Esqueci minha senha'",
+    "login": "🔐 Faça login pela página inicial",
+    "petrolino": "🤖 Oi! Sou o Petrolino 💙"
 }
 
 
-async def start(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE
-):
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
 """
 🤖 Olá! Eu sou o Petrolino.
 
-Posso ajudar você a encontrar informações no site e responder dúvidas frequentes.
+Posso ajudar você a encontrar informações no site.
 
 Exemplos:
 
@@ -98,10 +55,7 @@ Exemplos:
     )
 
 
-async def responder(
-    update: Update,
-    context: ContextTypes.DEFAULT_TYPE
-):
+async def responder(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     texto = update.message.text.lower()
 
@@ -109,13 +63,10 @@ async def responder(
 
         if palavra in texto:
 
-            await update.message.reply_text(
-                resposta
-            )
-
+            await update.message.reply_text(resposta)
             return
-            
-await update.message.reply_text(
+
+    await update.message.reply_text(
 """
 🤔 Ainda não consegui responder sua dúvida.
 
@@ -125,21 +76,11 @@ Você pode:
 
 ou
 
-🏫 Procurar a gestão escolar presencialmente.
-
-Também posso ajudar com:
-
-📅 provas
-📢 avisos
-📜 normas
-📂 arquivos
-🕒 horários
-🎉 eventos
-📆 calendário
+🏫 Procurar a gestão presencialmente.
 
 💙 Estou aprendendo cada vez mais.
 """
-)
+    )
 
 
 def main():
@@ -147,7 +88,7 @@ def main():
     app = (
         Application
         .builder()
-        .token(TOKEN)
+        .token(BOT_TOKEN)
         .build()
     )
 
@@ -165,9 +106,7 @@ def main():
         )
     )
 
-    print(
-        "🤖 Petrolino funcionando!"
-    )
+    print("🤖 Petrolino funcionando!")
 
     app.run_polling()
 
