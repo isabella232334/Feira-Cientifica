@@ -7,7 +7,7 @@ from telegram.ext import (
     filters
 )
 
-TOKEN = "8859778786:AAE3nfd-smdf2ib9OORKw_qXTM94e2gASH0"
+BOT_TOKEN = "8859778786:AAE3nfd-smdf2ib9OORKw_qXTM94e2gASH0"
 
 faq = {
 
